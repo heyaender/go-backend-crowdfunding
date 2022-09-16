@@ -14,7 +14,8 @@ var (
 )
 
 func MySQLConnect() {
-	DB, err = gorm.Open(mysql.Open(configs.DB_USER+":"+configs.DB_PASSWORD+"@tcp("+configs.DB_HOST+")/"+configs.DB_NAME+"?charset=utf8&parseTime=True&loc=Local"), &gorm.Config{})
+	dsn := configs.DB_USER + ":" + configs.DB_PASSWORD + "@tcp(" + configs.DB_HOST + ":" + configs.DB_PORT + ")/" + configs.DB_NAME + "?charset=utf8&parseTime=True&loc=Local"
+	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
 		log.Println("DB Connection Error: ")
