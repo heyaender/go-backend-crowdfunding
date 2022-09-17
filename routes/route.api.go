@@ -10,10 +10,6 @@ import (
 
 func LaunchApp() {
 
-	// WebServer := fmt.Sprintf("Web Server is running on port %s", configs.WEB_PORT)
-	// log.Println(WebServer)
-	// log.Fatal(http.ListenAndServe(configs.WEB_PORT, nil))
-
 	userRepository := users.NewRepository(databases.DB)
 	userService := users.NewService(userRepository)
 	userHandler := handlers.NewUserHandler(userService)
