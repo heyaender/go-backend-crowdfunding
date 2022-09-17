@@ -1,5 +1,6 @@
 package configs
 
+// Defining constants.
 const (
 	DB_USER     = "root"
 	DB_PASSWORD = "toor"

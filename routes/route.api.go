@@ -10,10 +10,12 @@ import (
 
 func LaunchApp() {
 
+	// Creating a new user repository, service, and handler.
 	userRepository := users.NewRepository(databases.DB)
 	userService := users.NewService(userRepository)
 	userHandler := handlers.NewUserHandler(userService)
 
+	// Initialize the router
 	router := gin.Default()
 	api := router.Group("/api/v1")
 	{

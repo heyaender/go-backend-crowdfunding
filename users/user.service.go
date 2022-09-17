@@ -6,18 +6,25 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+// Service is an interface that defines the RegisterUser method.
+// @property RegisterUser - This is the name of the method that will be exposed to the outside world.
 type Service interface {
 	RegisterUser(input RegisterUserInput) (Users, error)
 }
 
+// A service is a struct that has a repository.
+// @property {Repository} repository - This is the repository that the service will use to store and
+// retrieve data.
 type service struct {
 	repository Repository
 }
 
+// NewService returns a new service with the given repository.
 func NewService(repository Repository) *service {
 	return &service{repository}
 }
 
+// A function that takes in a RegisterUserInput struct and returns a Users struct and an error.
 func (s *service) RegisterUser(input RegisterUserInput) (Users, error) {
 	user := Users{}
 	user.Name = input.Name

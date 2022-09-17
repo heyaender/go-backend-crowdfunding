@@ -15,6 +15,10 @@ func NewUserHandler(userService users.Service) *userHandler {
 	return &userHandler{userService}
 }
 
+func GetUsers(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"message": "Get Users"})
+}
+
 func (h *userHandler) RegisterUser(c *gin.Context) {
 	var input users.RegisterUserInput
 
