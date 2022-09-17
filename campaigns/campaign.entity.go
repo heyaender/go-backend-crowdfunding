@@ -1,4 +1,4 @@
-package schemas
+package campaigns
 
 import "time"
 

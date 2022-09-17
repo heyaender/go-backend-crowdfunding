@@ -1,4 +1,4 @@
-package schemas
+package users
 
 import "time"
 
@@ -11,6 +11,6 @@ type Users struct {
 	Avatar_filename string    `json:"avatar_filename"`
 	Role            string    `json:"role"`
 	Token           string    `json:"token"`
-	Created_at      time.Time `json:"create_at"`
+	Created_at      time.Time `json:"created_at"`
 	Updated_at      time.Time `json:"updated_at"`
 }

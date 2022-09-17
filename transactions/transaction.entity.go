@@ -1,4 +1,4 @@
-package schemas
+package transactions
 
 import "time"
 
